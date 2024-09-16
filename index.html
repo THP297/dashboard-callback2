@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Table Example</title>
+    <link rel="stylesheet" href="./css/styles.css">
+    <link rel="stylesheet" href="./libraries/bootstrap-5.3.3-dist/css/bootstrap.min.css">
+    <script src="./js/chart.umd.js"></script>
+
+
+</head>
+<body>
+    <div id="realtime-dashboard-callback">
+        <div class="row">
+            <div class="col-lg-4 col-12 d-flex align-items-center">
+                <div style="width: 50%; margin: auto;">
+                    <canvas id="pieChart"></canvas>
+                </div>
+            </div>
+            <div class="col-lg-8 col-12 d-flex align-items-center">
+                <div class="container">
+                    <!-- Filter Section Row -->
+                    <div class="row mb-4">
+                        <div class="col-lg-3 col-md-6">
+                            <!-- Customer Rank Filter -->
+                            <label for="customerRank" class="form-label">Hạng KH:</label>
+                            <select class="form-select" id="customerRank">
+                                <option value="">Tất cả</option>
+                                <option value="VIP">VIP</option>
+                                <option value="Mass">Mass</option>
+                                <option value="KHDN">KHDN</option>
+                            </select>
+                        </div>
+                        
+                        <div class="col-lg-3 col-md-6">
+                            <!-- Incoming Calls Search -->
+                            <label for="incomingSearch" class="form-label">Số gọi đến:</label>
+                            <input type="text" class="form-control" id="incomingSearch" placeholder="Tìm theo SĐT">
+                        </div>
+<!--                         
+                        <div class="col-lg-3 col-md-6">
+                            <label for="sortCalls" class="form-label">Thứ tự gọi lại:</label>
+                            <select class="form-select" id="sortCalls">
+                                <option value="asc">Tăng dần</option>
+                                <option value="desc">Giảm dần</option>
+                            </select>
+                        </div> -->
+                        
+                        <div class="col-lg-3 col-md-6">
+                            <!-- Employee Search Filter -->
+                            <label for="agentSearch" class="form-label">Nhân viên:</label>
+                            <input type="text" class="form-control" id="agentSearch" placeholder="Tìm theo nhân viên">
+                        </div>
+                        
+                        <div class="col-lg-3 col-md-6">
+                            <!-- Status Filter -->
+                            <label for="statusFilter" class="form-label">Trạng thái:</label>
+                            <select class="form-select" id="statusFilter">
+                                <option value="">Tất cả</option>
+                                <option value="Chưa xử lý">Chưa xử lý</option>
+                                <option value="Đã xử lý">Đã xử lý</option>
+                                <option value="Gọi lại lần 1">Gọi lại lần 1</option>
+                                <option value="Gọi lại lần 2">Gọi lại lần 2</option>
+                                <option value="Gọi lại lần 3">Gọi lại lần 3</option>
+
+                            </select>
+                        </div>
+                        
+                        <div class="col-lg-3 col-md-6 mt-3">
+                            <!-- Queue Filter -->
+                            <label for="queueFilter" class="form-label">Queue:</label>
+                            <select class="form-select" id="queueFilter">
+                                <option value="Tất cả">Tất cả</option>
+                                <option value="IVR L3">IVR L3</option>
+                            </select>
+                        </div>
+                        
+                        <div class="col-lg-3 col-md-6 mt-3">
+                            <!-- Recall Count Filter -->
+                            <label for="recallCountFilter" class="form-label">Số lần gọi lại:</label>
+                            <select class="form-select" id="recallCountFilter">
+                                <option value="Tăng dần">Tăng dần</option>
+                                <option value="Giảm dần">Giảm dần</option>
+                            </select>
+                        </div>
+                        
+                    </div>
+                
+                    <!-- Table Section Row -->
+                    <div class="row">
+                        <div class="col-12">
+                            <div class="table-responsive">
+                                <table class="table table-bordered" id="exampleTable">
+                                    <thead class="table-light">
+                                        <tr>
+                                            <th>Tổng</th>
+                                            <th>Hạng KH</th>
+                                            <th>Chưa xử lý</th>
+                                            <th>Inbound thành công</th>
+                                            <th>Đã xử lý</th>
+                                            <th>Gọi lại lần 1</th>
+                                            <th>Gọi lại lần 2</th>
+                                            <th>Gọi lại lần 3</th>
+                                            <th>Agent gác máy</th>
+                                            <th>Số gọi đến</th>
+                                            <th>Queue</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <!-- Table body will be dynamically generated -->
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+            </div>
+            
+        </div>
+    </div>
+    
+
+    <script src="./libraries/stomp.js"></script>
+    <script src="./js/messageHandler.js"></script>
+    <script src="./js/renderTable.js"></script>
+    <script src="./js/createChart.js"></script>
+
+    <script src="./libraries/bootstrap-5.3.3-dist/js/bootstrap.bundle.min.js"></script>
+
+
+</body>
+</html>
