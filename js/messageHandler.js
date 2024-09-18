@@ -1,4 +1,4 @@
-var tableData;
+// var tableData;
 
 let MessageReceiver = (() => {
 

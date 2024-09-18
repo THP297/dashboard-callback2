@@ -1,8 +1,7 @@
-// const tableData = [
+// var tableData = [
 //     { total: 27, category: 'VIP', pending: 1, inboundSuccess: 1, processed: 0, recallCount1: 1, recallCount2: 0, recallCount3: 0, agentHangup: 10007, incomingCalls: 7, queue: 'IVR L3' },
 //     { total: 20, category: 'Mas', pending: 0, inboundSuccess: 1, processed: 1, recallCount1: 0, recallCount2: 1, recallCount3: 0, agentHangup: 10004, incomingCalls: 6, queue: 'Quew' },
 //     { total: 41, category: 'KHDN', pending: 1, inboundSuccess: 1, processed: 0, recallCount1: 0, recallCount2: 0, recallCount3: 1, agentHangup: 10006, incomingCalls: 9, queue: 'IVR L3' },
-//     { total: 21, category: 'KHDN', pending: 0, inboundSuccess: 0, processed: 1, recallCount1: 1, recallCount2: 0, recallCount3: 0, agentHangup: 10008, incomingCalls: 5, queue: 'IVR L3' },
 // ];
 
 
@@ -116,4 +115,3 @@ function updateTableData() {
 document.querySelectorAll('select, input').forEach(filterInput => {
     filterInput.addEventListener('input', filterTableData);
 });
-
